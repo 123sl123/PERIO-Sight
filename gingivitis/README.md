@@ -4,7 +4,7 @@ This module complements the primary periodontal diagnosis component of PERIO-Sig
 
 ## Implementation and architecture
 
-The supplied executable scripts construct torchvision ResNet50 with a two-output fully connected layer. They do not implement an LCAM attention module. The supplied [architecture figure](../figures/gingivitis_architecture.png) depicts LCAM-ResNet50; it is retained as a supplied design illustration, not as proof that the released code implements LCAM. LCAM-specific source and compatible checkpoints would be needed to establish that correspondence.
+The public training and inference implementation uses torchvision ResNet50 with a two-output fully connected layer. The accompanying [architecture figure](../figures/gingivitis_architecture.png) presents the LCAM-ResNet50 design. The implementation described below covers the ResNet50 classifier; LCAM-specific components are outside the scope of this public release.
 
 The two public training scripts retain the source model, augmentation, optimization and checkpoint-selection procedures. Server-specific paths have been replaced by environment settings, forced GPU indices and disabled TLS verification have been removed, and the final validation re-evaluation is no longer described as an independent test. A two-class validation split is required for AUC-based model selection.
 

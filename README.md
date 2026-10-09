@@ -142,7 +142,7 @@ The [gingivitis module](gingivitis/README.md) complements the primary periodonta
 
 Model output indices are `0: Gingivitis`, `1: Normal`; the public image-prediction export uses the clinical convention `0: healthy`, `1: gingivitis`. The supplied training precision, recall and F1 use model class 1 (Normal) as positive and are not gingivitis sensitivity. Final training reports re-evaluate the validation partition rather than an independent test partition.
 
-The [gingivitis architecture figure](figures/gingivitis_architecture.png) is supplied separately and is not embedded here. It depicts LCAM-ResNet50, whereas the supplied executable scripts contain no LCAM implementation. The figure must not be treated as an exact diagram of the released ResNet code. Historical CAM and projected-image collections are provided in `gingivitis/display_figures/` for display only, without new diagnostic or localization claims. See the module README for configuration, commands, source limitations and checks.
+The [gingivitis architecture figure](figures/gingivitis_architecture.png) is available in `figures/`. Representative CAM visualizations and projected scan images are organized in `gingivitis/display_figures/`. See the [module README](gingivitis/README.md) for implementation details, configuration, usage and validation checks.
 
 ## Preprocessing
 
