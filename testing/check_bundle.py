@@ -19,7 +19,7 @@ def main():
             continue
         if CJK.search(str(path.relative_to(ROOT))):
             raise ValueError(f"Non-English filename: {path}")
-        if path.is_file() and path.suffix not in {".png", ".pyc"}:
+        if path.is_file() and path.suffix not in {".png", ".tiff", ".pyc"}:
             content = path.read_text(encoding="utf-8-sig")
             if CJK.search(content):
                 raise ValueError(f"Non-English text: {path}")

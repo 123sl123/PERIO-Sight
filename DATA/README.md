@@ -15,4 +15,4 @@ Slot 33 is the whole lower-jaw view; slot 34 is the whole upper-jaw view. `selec
 
 The 34 slots do not imply that the patient has 32 natural teeth. Some slots use neighboring-tooth substitute views, and different slots may reuse a view. Do not infer tooth presence from a filename or treat a substitute tooth as the intended tooth's annotation. The visible tooth identities are defined by `shapes[].label` in each JSON file.
 
-These labels identify segmented teeth; they are not clinical periodontitis ground truth. The example contains neither clinical diagnoses nor fabricated predictions. It demonstrates the existing 34-view interface input format, not a full multi-angle dataset.
+These labels identify segmented teeth; they are not clinical periodontitis ground truth. This input directory contains no clinical diagnoses. It demonstrates the existing 34-view interface input format, not a full multi-angle dataset. Corresponding stored deployment predictions and six CAM images are provided separately in [RESULTS/D0064](../RESULTS/D0064/); they are not clinical reference labels.
