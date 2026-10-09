@@ -1,0 +1,17 @@
+# Install a matching Ultralytics 8.4.146 checkout separately; see README.md.
+torch
+torchvision
+numpy
+opencv-python
+PyYAML
+Pillow
+shapely
+pandas
+scikit-learn
+scipy
+matplotlib
+tqdm
+openpyxl
+# CUDA extensions; install after PyTorch with --no-build-isolation.
+# mamba-ssm==2.3.2.post1
+# causal-conv1d==1.6.2.post1

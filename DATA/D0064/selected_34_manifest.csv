@@ -1,0 +1,35 @@
+﻿slot,slot_type,target_tooth,selected_tooth,y_angle_degrees,selection_rule,image_file,json_file
+1,T18,18,17,90,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T17 as a substitute,01_T18_D0064_X+00_D0064_Y+90deg.png,01_T18_D0064_X+00_D0064_Y+90deg.json
+2,T17,17,17,80,X+00 progressive angle sequence; target tooth annotated,02_T17_D0064_X+00_D0064_Y+80deg.png,02_T17_D0064_X+00_D0064_Y+80deg.json
+3,T16,16,16,70,X+00 progressive angle sequence; target tooth annotated,03_T16_D0064_X+00_D0064_Y+70deg.png,03_T16_D0064_X+00_D0064_Y+70deg.json
+4,T15,15,15,60,X+00 progressive angle sequence; target tooth annotated,04_T15_D0064_X+00_D0064_Y+60deg.png,04_T15_D0064_X+00_D0064_Y+60deg.json
+5,T14,14,14,50,X+00 progressive angle sequence; target tooth annotated,05_T14_D0064_X+00_D0064_Y+50deg.png,05_T14_D0064_X+00_D0064_Y+50deg.json
+6,T13,13,13,40,X+00 progressive angle sequence; target tooth annotated,06_T13_D0064_X+00_D0064_Y+40deg.png,06_T13_D0064_X+00_D0064_Y+40deg.json
+7,T12,12,12,30,X+00 progressive angle sequence; target tooth annotated,07_T12_D0064_X+00_D0064_Y+30deg.png,07_T12_D0064_X+00_D0064_Y+30deg.json
+8,T11,11,11,0,X+00 progressive angle sequence; target tooth annotated; incisor fixed at Y+00 frontal view,08_T11_D0064_X+00_D0064_Y+00deg.png,08_T11_D0064_X+00_D0064_Y+00deg.json
+9,T21,21,11,0,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T11 as a substitute; incisor fixed at Y+00 frontal view,09_T21_D0064_X+00_D0064_Y+00deg.png,09_T21_D0064_X+00_D0064_Y+00deg.json
+10,T22,22,11,0,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T11 as a substitute,10_T22_D0064_X+00_D0064_Y+00deg.png,10_T22_D0064_X+00_D0064_Y+00deg.json
+11,T23,23,24,-10,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T24 as a substitute,11_T23_D0064_X+00_D0064_Y-10deg.png,11_T23_D0064_X+00_D0064_Y-10deg.json
+12,T24,24,24,-20,X+00 progressive angle sequence; target tooth annotated,12_T24_D0064_X+00_D0064_Y-20deg.png,12_T24_D0064_X+00_D0064_Y-20deg.json
+13,T25,25,25,-30,X+00 progressive angle sequence; target tooth annotated,13_T25_D0064_X+00_D0064_Y-30deg.png,13_T25_D0064_X+00_D0064_Y-30deg.json
+14,T26,26,26,-40,X+00 progressive angle sequence; target tooth annotated,14_T26_D0064_X+00_D0064_Y-40deg.png,14_T26_D0064_X+00_D0064_Y-40deg.json
+15,T27,27,27,-50,X+00 progressive angle sequence; target tooth annotated,15_T27_D0064_X+00_D0064_Y-50deg.png,15_T27_D0064_X+00_D0064_Y-50deg.json
+16,T28,28,27,-60,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T27 as a substitute,16_T28_D0064_X+00_D0064_Y-60deg.png,16_T28_D0064_X+00_D0064_Y-60deg.json
+17,T38,38,34,-90,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T34 as a substitute,17_T38_D0064_X+00_D0064_Y-90deg.png,17_T38_D0064_X+00_D0064_Y-90deg.json
+18,T37,37,34,-80,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T34 as a substitute,18_T37_D0064_X+00_D0064_Y-80deg.png,18_T37_D0064_X+00_D0064_Y-80deg.json
+19,T36,36,34,-70,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T34 as a substitute,19_T36_D0064_X+00_D0064_Y-70deg.png,19_T36_D0064_X+00_D0064_Y-70deg.json
+20,T35,35,34,-60,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T34 as a substitute,20_T35_D0064_X+00_D0064_Y-60deg.png,20_T35_D0064_X+00_D0064_Y-60deg.json
+21,T34,34,34,-50,X+00 progressive angle sequence; target tooth annotated,21_T34_D0064_X+00_D0064_Y-50deg.png,21_T34_D0064_X+00_D0064_Y-50deg.json
+22,T33,33,33,-40,X+00 progressive angle sequence; target tooth annotated,22_T33_D0064_X+00_D0064_Y-40deg.png,22_T33_D0064_X+00_D0064_Y-40deg.json
+23,T32,32,32,-30,X+00 progressive angle sequence; target tooth annotated,23_T32_D0064_X+00_D0064_Y-30deg.png,23_T32_D0064_X+00_D0064_Y-30deg.json
+24,T31,31,31,0,X+00 progressive angle sequence; target tooth annotated; incisor fixed at Y+00 frontal view,24_T31_D0064_X+00_D0064_Y+00deg.png,24_T31_D0064_X+00_D0064_Y+00deg.json
+25,T41,41,41,0,X+00 progressive angle sequence; target tooth annotated; incisor fixed at Y+00 frontal view,25_T41_D0064_X+00_D0064_Y+00deg.png,25_T41_D0064_X+00_D0064_Y+00deg.json
+26,T42,42,42,0,X+00 progressive angle sequence; target tooth annotated,26_T42_D0064_X+00_D0064_Y+00deg.png,26_T42_D0064_X+00_D0064_Y+00deg.json
+27,T43,43,43,10,X+00 progressive angle sequence; target tooth annotated,27_T43_D0064_X+00_D0064_Y+10deg.png,27_T43_D0064_X+00_D0064_Y+10deg.json
+28,T44,44,44,20,X+00 progressive angle sequence; target tooth annotated,28_T44_D0064_X+00_D0064_Y+20deg.png,28_T44_D0064_X+00_D0064_Y+20deg.json
+29,T45,45,45,30,X+00 progressive angle sequence; target tooth annotated,29_T45_D0064_X+00_D0064_Y+30deg.png,29_T45_D0064_X+00_D0064_Y+30deg.json
+30,T46,46,46,40,X+00 progressive angle sequence; target tooth annotated,30_T46_D0064_X+00_D0064_Y+40deg.png,30_T46_D0064_X+00_D0064_Y+40deg.json
+31,T47,47,47,50,X+00 progressive angle sequence; target tooth annotated,31_T47_D0064_X+00_D0064_Y+50deg.png,31_T47_D0064_X+00_D0064_Y+50deg.json
+32,T48,48,47,60,X+00 progressive angle sequence; target tooth unannotated; use neighboring tooth on the same jaw T47 as a substitute,32_T48_D0064_X+00_D0064_Y+60deg.png,32_T48_D0064_X+00_D0064_Y+60deg.json
+33,lower_whole_jaw,,,,whole-jaw view,33_lower_whole_jaw_D0064_lower_X-80_D0064_lower_Y+10deg.png,33_lower_whole_jaw_D0064_lower_X-80_D0064_lower_Y+10deg.json
+34,upper_whole_jaw,,,,whole-jaw view,34_upper_whole_jaw_D0064_upper_X-60_D0064_upper_Y+10deg.png,34_upper_whole_jaw_D0064_upper_X-60_D0064_upper_Y+10deg.json
