@@ -2,7 +2,7 @@
 
 This repository contains selected research implementations for PERIO-Sight, with periodontal diagnosis as the primary task and gingivitis classification as an auxiliary task. The primary implementation focuses on DM-YOLO periodontal detection and the processing of multi-view images derived from intraoral optical scans.
 
-The public implementation includes the combined Mamba + DySample model architecture, training and OBB evaluation scripts, core preprocessing operations, and a representative 34-view input with stored deployment outputs. An auxiliary ResNet gingivitis module includes image-level training and inference, an aggregation interface, and historical display images. It is a partial research release, not the complete PERIO-Sight clinical software system. Diagnostic aggregation, visualization, and longitudinal monitoring implementations are not included.
+The public implementation includes the combined Mamba + DySample model architecture, training and OBB evaluation scripts, core preprocessing operations, and a representative 34-view input with stored deployment outputs. The auxiliary gingivitis release includes ResNet50 classifier training and inference, an aggregation interface, architecture materials and display images. This repository is a selected research release. LCAM-specific components and proprietary diagnostic aggregation, visualization and longitudinal monitoring implementations are intentionally withheld from public distribution.
 
 ## Method overview
 
@@ -138,7 +138,7 @@ The supplied [architecture figure](figures/DM_YOLO_architecture.png) is rendered
 
 ## Auxiliary gingivitis classification
 
-The [gingivitis module](gingivitis/README.md) complements the primary periodontal workflow. Its supplied executable training code uses standard ResNet50, with a cross-entropy baseline and a V4 variant using weighted sampling, class-weighted focal modulation and label smoothing. Public inference exports image-level scores from tooth crops and leaves tooth/patient aggregation to a caller-supplied implementation.
+The [gingivitis module](gingivitis/README.md) complements the primary periodontal workflow. The accompanying architecture materials present LCAM-ResNet50. The publicly released code provides the ResNet50 classifier component, with a cross-entropy baseline and a V4 variant using weighted sampling, class-weighted focal modulation and label smoothing. LCAM-specific implementation is intentionally withheld from public distribution. Public inference exports image-level scores from tooth crops and provides an interface for a separately supplied tooth/patient aggregator.
 
 Model output indices are `0: Gingivitis`, `1: Normal`; the public image-prediction export uses the clinical convention `0: healthy`, `1: gingivitis`. The supplied training precision, recall and F1 use model class 1 (Normal) as positive and are not gingivitis sensitivity. Final training reports re-evaluate the validation partition rather than an independent test partition.
 
@@ -160,7 +160,7 @@ This command checks Python syntax, English-only text and filenames, the 34 order
 
 ## Code availability
 
-This repository provides a selected implementation of the DM-YOLO architecture, training and detection evaluation, core preprocessing, multi-view processing interfaces, and auxiliary ResNet gingivitis classification. The complete proprietary software system is not distributed. Diagnostic aggregation, visualization, and longitudinal monitoring implementations are excluded from this release.
+This repository provides a selected implementation of the DM-YOLO architecture, training and detection evaluation, core preprocessing, multi-view processing interfaces, and the ResNet50 classifier component of the auxiliary gingivitis module. LCAM-specific components and proprietary diagnostic aggregation, visualization and longitudinal monitoring implementations are intentionally withheld from public distribution.
 
 The public code does not independently reproduce the complete patient- and tooth-level diagnostic workflow or all study-level results. Such reproduction additionally requires the excluded computational components, study-specific data partitions, reference labels, and trained checkpoints.
 

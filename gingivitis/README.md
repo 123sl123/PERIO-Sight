@@ -1,10 +1,10 @@
 # Auxiliary Gingivitis Classification
 
-This module complements the primary periodontal diagnosis component of PERIO-Sight. It provides the supplied image-level ResNet training implementations, portable tooth-crop inference, an aggregation interface, and historical visualization examples. It is a selected public release, not the complete proprietary clinical workflow.
+This module complements the primary periodontal diagnosis component of PERIO-Sight. This selected public release provides ResNet50 classifier training, portable tooth-crop inference, an aggregation interface, LCAM-ResNet50 architecture materials and visualization examples. LCAM-specific components and proprietary clinical aggregation and visualization implementations are intentionally withheld from public distribution.
 
 ## Implementation and architecture
 
-The public training and inference implementation uses torchvision ResNet50 with a two-output fully connected layer. The accompanying [architecture figure](../figures/gingivitis_architecture.png) presents the LCAM-ResNet50 design. The implementation described below covers the ResNet50 classifier; LCAM-specific components are outside the scope of this public release.
+The accompanying [architecture figure](../figures/gingivitis_architecture.png) presents LCAM-ResNet50. The public code provides the underlying ResNet50 classifier component, using torchvision ResNet50 with a two-output fully connected layer. The LCAM-specific implementation is intentionally withheld from public distribution; the code and configuration below describe the released classifier component.
 
 The two public training scripts retain the source model, augmentation, optimization and checkpoint-selection procedures. Server-specific paths have been replaced by environment settings, forced GPU indices and disabled TLS verification have been removed, and the final validation re-evaluation is no longer described as an independent test. A two-class validation split is required for AUC-based model selection.
 
@@ -24,7 +24,7 @@ gingivitis/
     workflow_examples/               # Separately supplied workflow displays
 ```
 
-The three display collections retain their original pixels and patient-oriented filenames. They are presentation materials only: they do not establish model provenance, clinical reference labels, localization accuracy or diagnostic performance. The two CAM collections are kept separate because they contain different supplied renderings. No CAM-generation implementation is released.
+The three display collections retain their original pixels and patient-oriented filenames and are provided as illustrative visualization examples. The two CAM collections are kept separate to preserve their respective renderings. The proprietary CAM-generation implementation is intentionally withheld from public distribution. Diagnostic performance is assessed using clinical reference labels and prediction records, separately from these display materials.
 
 ## Class and score conventions
 
@@ -98,7 +98,7 @@ CUDA_VISIBLE_DEVICES=3 python gingivitis/inference/predict.py \
 
 Supported crop names include `D0279_Y-70deg_36.jpg` and names containing `tooth36`. Whole-jaw views and CAM overlays are not classifier inputs. Use `--longitudinal` to preserve separate visit units; visits are not periodontal severity stages. Patient-folder suffixes `-1`, `-2`, `-3` take precedence over filename visit suffixes.
 
-At the function level, `run_pipeline(..., aggregate=callback)` permits integration with a separately supplied tooth/patient aggregator. The original project contains base, internal-cohort and visit-aware inference variants, but their complete voting policies, threshold-search implementation and cohort-specific reference-label shortcuts are not distributed. No patient diagnosis is produced by the public CLI.
+At the function level, `run_pipeline(..., aggregate=callback)` permits integration with a separately supplied tooth/patient aggregator. The project includes base, internal-cohort and visit-aware inference variants. Their complete voting policies and threshold-search implementation are intentionally withheld from public distribution. The public CLI exports image-level predictions; tooth/patient decisions are provided through the aggregation interface.
 
 Threshold selection must use an explicitly designated development partition and be fixed before held-out or external evaluation. The supplied source history does not establish that a particular optimized threshold was selected independently of external evaluation labels. No performance claim or threshold-validation claim is made by this release.
 
@@ -106,4 +106,4 @@ Threshold selection must use an explicitly designated development partition and 
 
 Run `python testing/check_bundle.py` for text and source integrity, and `python testing/check_gingivitis.py` in an environment with the module dependencies for CPU smoke tests. These checks do not reproduce clinical evaluation or validate the historical CAM images.
 
-Clinical labels, full study datasets, trained weights, LCAM-specific implementation and proprietary aggregation/visualization components are not included. The supplied display images are not used to calculate or revise study metrics.
+This public release includes the classifier implementation, configuration and usage documentation, architecture materials and illustrative display images. LCAM-specific implementation, proprietary aggregation/visualization components, trained weights and complete clinical datasets are intentionally withheld from public distribution. Study metrics are computed from clinical reference labels and prediction records rather than display images.
