@@ -10,6 +10,7 @@ pandas
 scikit-learn
 scipy
 matplotlib
+seaborn
 tqdm
 openpyxl
 # CUDA extensions; install after PyTorch with --no-build-isolation.

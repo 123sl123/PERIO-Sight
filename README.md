@@ -1,8 +1,8 @@
 # PERIO-Sight: AI Enabled Multidimensional Periodontal Diagnosis and Longitudinal Monitoring Using Intraoral Optical Scanning Data
 
-This repository contains selected research implementations for PERIO-Sight, with an emphasis on the DM-YOLO periodontal detection component and the processing of multi-view images derived from intraoral optical scans.
+This repository contains selected research implementations for PERIO-Sight, with periodontal diagnosis as the primary task and gingivitis classification as an auxiliary task. The primary implementation focuses on DM-YOLO periodontal detection and the processing of multi-view images derived from intraoral optical scans.
 
-The public implementation includes the combined Mamba + DySample model architecture, training and OBB evaluation scripts, core preprocessing operations, and a representative 34-view input with stored deployment outputs. It is a partial research release, not the complete PERIO-Sight clinical software system. Diagnostic aggregation, visualization, and longitudinal monitoring implementations are not included.
+The public implementation includes the combined Mamba + DySample model architecture, training and OBB evaluation scripts, core preprocessing operations, and a representative 34-view input with stored deployment outputs. An auxiliary ResNet gingivitis module includes image-level training and inference, an aggregation interface, and historical display images. It is a partial research release, not the complete PERIO-Sight clinical software system. Diagnostic aggregation, visualization, and longitudinal monitoring implementations are not included.
 
 ## Method overview
 
@@ -34,6 +34,10 @@ preprocessing/
 DATA/D0064/                # 34 PNG images with paired JSON annotations
 RESULTS/D0064/             # Corresponding diagnosis JSON and six CAM images
 figures/                  # Supplied architecture figure
+gingivitis/
+  training/               # Baseline and V4 ResNet training
+  inference/              # Tooth-crop inference and aggregation interface
+  display_figures/        # Historical gingivitis visualization examples
 ```
 
 ## Software requirements and installation
@@ -132,6 +136,14 @@ The JSON contains the patient-level diagnostic decision and score, together with
 
 The supplied [architecture figure](figures/DM_YOLO_architecture.png) is rendered from the source PDF at 300 dpi without modifying its content.
 
+## Auxiliary gingivitis classification
+
+The [gingivitis module](gingivitis/README.md) complements the primary periodontal workflow. Its supplied executable training code uses standard ResNet50, with a cross-entropy baseline and a V4 variant using weighted sampling, class-weighted focal modulation and label smoothing. Public inference exports image-level scores from tooth crops and leaves tooth/patient aggregation to a caller-supplied implementation.
+
+Model output indices are `0: Gingivitis`, `1: Normal`; the public image-prediction export uses the clinical convention `0: healthy`, `1: gingivitis`. The supplied training precision, recall and F1 use model class 1 (Normal) as positive and are not gingivitis sensitivity. Final training reports re-evaluate the validation partition rather than an independent test partition.
+
+The [gingivitis architecture figure](figures/gingivitis_architecture.png) is supplied separately and is not embedded here. It depicts LCAM-ResNet50, whereas the supplied executable scripts contain no LCAM implementation. The figure must not be treated as an exact diagram of the released ResNet code. Historical CAM and projected-image collections are provided in `gingivitis/display_figures/` for display only, without new diagnostic or localization claims. See the module README for configuration, commands, source limitations and checks.
+
 ## Preprocessing
 
 Selected preprocessing functions are provided for single-view rendering, vertex-label coloring, annotation filtering, selection of clinically positive teeth, and OBB target conversion. They operate on caller-supplied meshes or in-memory annotations.
@@ -148,13 +160,13 @@ This command checks Python syntax, English-only text and filenames, the 34 order
 
 ## Code availability
 
-This repository provides a selected implementation of the DM-YOLO architecture, training and detection evaluation, core preprocessing, and multi-view processing interfaces. The complete proprietary software system is not distributed. Diagnostic aggregation, visualization, and longitudinal monitoring implementations are excluded from this release.
+This repository provides a selected implementation of the DM-YOLO architecture, training and detection evaluation, core preprocessing, multi-view processing interfaces, and auxiliary ResNet gingivitis classification. The complete proprietary software system is not distributed. Diagnostic aggregation, visualization, and longitudinal monitoring implementations are excluded from this release.
 
 The public code does not independently reproduce the complete patient- and tooth-level diagnostic workflow or all study-level results. Such reproduction additionally requires the excluded computational components, study-specific data partitions, reference labels, and trained checkpoints.
 
 ## Data availability
 
-A representative 34-view PNG/JSON input and its stored deployment outputs are included for demonstrating input and output organization. Clinical records, complete study datasets, clinical reference labels, and trained checkpoints are not distributed with this repository.
+A representative 34-view PNG/JSON input and its stored deployment outputs are included for demonstrating input and output organization. Historical gingivitis display images are included separately and are not an evaluation dataset. Clinical records, complete study datasets, clinical reference labels, and trained checkpoints are not distributed with this repository.
 
 ## License and attribution
 
