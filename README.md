@@ -132,8 +132,6 @@ The JSON contains the patient-level diagnostic decision and score, together with
 
 The supplied [architecture figure](figures/DM_YOLO_architecture.png) is rendered from the source PDF at 300 dpi without modifying its content.
 
-![DM-YOLO architecture](figures/DM_YOLO_architecture.png)
-
 ## Preprocessing
 
 Selected preprocessing functions are provided for single-view rendering, vertex-label coloring, annotation filtering, selection of clinically positive teeth, and OBB target conversion. They operate on caller-supplied meshes or in-memory annotations.
