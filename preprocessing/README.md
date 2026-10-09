@@ -61,4 +61,4 @@ The mesh must already be aligned and centered. Vertex labels must correspond one
 
 ## Scope
 
-Mesh alignment, study-specific view-exclusion tables, clinical spreadsheet processing, patient partitioning, batch orchestration, and the complete proprietary preprocessing pipeline are omitted. Users must independently prepare these inputs and enforce patient-exclusive training, validation, and test partitions.
+Access to mesh alignment, study-specific view-exclusion tables, clinical spreadsheet processing, patient partitioning, batch orchestration and the complete preprocessing pipeline may be requested from the research team; see [Access requests](../README.md#access-requests). Users of the public functions supply the corresponding inputs and enforce patient-exclusive training, validation and test partitions.

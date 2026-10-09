@@ -1,10 +1,10 @@
 # Auxiliary Gingivitis Classification
 
-This module complements the primary periodontal diagnosis component of PERIO-Sight. This selected public release provides ResNet50 classifier training, portable tooth-crop inference, an aggregation interface, LCAM-ResNet50 architecture materials and visualization examples. LCAM-specific components and proprietary clinical aggregation and visualization implementations are intentionally withheld from public distribution.
+This module complements the primary periodontal diagnosis component of PERIO-Sight. This selected public release provides ResNet50 classifier training, portable tooth-crop inference, an aggregation interface, LCAM-ResNet50 architecture materials and visualization examples. Access to LCAM-specific components and the complete clinical aggregation and visualization implementations may be requested from the research team; see [Access requests](../README.md#access-requests).
 
 ## Implementation and architecture
 
-The accompanying [architecture figure](../figures/gingivitis_architecture.png) presents LCAM-ResNet50. The public code provides the underlying ResNet50 classifier component, using torchvision ResNet50 with a two-output fully connected layer. The LCAM-specific implementation is intentionally withheld from public distribution; the code and configuration below describe the released classifier component.
+The accompanying [architecture figure](../figures/gingivitis_architecture.png) presents LCAM-ResNet50. The public code provides the underlying ResNet50 classifier component, using torchvision ResNet50 with a two-output fully connected layer. Access to the LCAM-specific implementation may be requested from the research team; the code and configuration below describe the publicly released classifier component.
 
 The two public training scripts retain the source model, augmentation, optimization and checkpoint-selection procedures. Server-specific paths have been replaced by environment settings, forced GPU indices and disabled TLS verification have been removed, and the final validation re-evaluation is no longer described as an independent test. A two-class validation split is required for AUC-based model selection.
 
@@ -24,7 +24,7 @@ gingivitis/
     workflow_examples/               # Separately supplied workflow displays
 ```
 
-The three display collections retain their original pixels and patient-oriented filenames and are provided as illustrative visualization examples. The two CAM collections are kept separate to preserve their respective renderings. The proprietary CAM-generation implementation is intentionally withheld from public distribution. Diagnostic performance is assessed using clinical reference labels and prediction records, separately from these display materials.
+The three display collections retain their original pixels and patient-oriented filenames and are provided as illustrative visualization examples. The two CAM collections are kept separate to preserve their respective renderings. Access to the complete CAM-generation implementation may be requested from the research team. Diagnostic performance is assessed using clinical reference labels and prediction records, separately from these display materials.
 
 ## Class and score conventions
 
@@ -98,7 +98,7 @@ CUDA_VISIBLE_DEVICES=3 python gingivitis/inference/predict.py \
 
 Supported crop names include `D0279_Y-70deg_36.jpg` and names containing `tooth36`. Whole-jaw views and CAM overlays are not classifier inputs. Use `--longitudinal` to preserve separate visit units; visits are not periodontal severity stages. Patient-folder suffixes `-1`, `-2`, `-3` take precedence over filename visit suffixes.
 
-At the function level, `run_pipeline(..., aggregate=callback)` permits integration with a separately supplied tooth/patient aggregator. The project includes base, internal-cohort and visit-aware inference variants. Their complete voting policies and threshold-search implementation are intentionally withheld from public distribution. The public CLI exports image-level predictions; tooth/patient decisions are provided through the aggregation interface.
+At the function level, `run_pipeline(..., aggregate=callback)` permits integration with a separately supplied tooth/patient aggregator. The project includes base, internal-cohort and visit-aware inference variants. Access to their complete voting and threshold-search implementations may be requested from the research team. The public CLI exports image-level predictions; tooth/patient decisions require an implementation supplied through the aggregation interface.
 
 Threshold selection must use an explicitly designated development partition and be fixed before held-out or external evaluation. The supplied source history does not establish that a particular optimized threshold was selected independently of external evaluation labels. No performance claim or threshold-validation claim is made by this release.
 
@@ -106,4 +106,4 @@ Threshold selection must use an explicitly designated development partition and 
 
 Run `python testing/check_bundle.py` for text and source integrity, and `python testing/check_gingivitis.py` in an environment with the module dependencies for CPU smoke tests. These checks do not reproduce clinical evaluation or validate the historical CAM images.
 
-This public release includes the classifier implementation, configuration and usage documentation, architecture materials and illustrative display images. LCAM-specific implementation, proprietary aggregation/visualization components, trained weights and complete clinical datasets are intentionally withheld from public distribution. Study metrics are computed from clinical reference labels and prediction records rather than display images.
+This public release includes the classifier implementation, configuration and usage documentation, architecture materials and illustrative display images. Access to the LCAM-specific implementation, complete aggregation/visualization components, trained weights and study datasets may be requested from the research team under the [access conditions](../README.md#access-requests). Study metrics are computed from clinical reference labels and prediction records rather than display images.
